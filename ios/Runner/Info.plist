@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to the photo library for uploading media.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow saving files to photos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow access to microphone for media.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow access to location for personalized content.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow access to location for personalized content and background updates.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow access to location for background updates.</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>LocationAccuracy</key>
+		<string>Allow access to precise location for better accuracy.</string>
+	</dict>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access to the camera for uploading photos or videos.</string>
+	<key>CFBundleDisplayName</key>
+	<string>GOEXDATA</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>GOEXDATA</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>12.0</string>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+		<string>location</string>
+	</array>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Allow notifications to receive updates.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>goexdata</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https</string>
+		<string>http</string>
+	</array>
+	<key>WKAppBoundDomains</key>
+	<array>
+		<string>app.goexdata.com</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+	<key>UIKeyboardIsOptionalForTextField</key>
+	<true/>
+	<key>UIBackgroundFetch</key>
+	<true/>
+	<key>UIBackgroundProcessing</key>
+	<true/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>FirebaseMessagingAutoInitEnabled</key>
+	<true/>
+	<key>FirebaseMessagingSwizzlingEnabled</key>
+	<true/>
+	<key>FirebaseMessagingUseSandbox</key>
+	<true/>
+</dict>
+</plist>
