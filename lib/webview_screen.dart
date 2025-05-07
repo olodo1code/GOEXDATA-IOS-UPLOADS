@@ -125,7 +125,6 @@ class _WebViewScreenState extends State<WebViewScreen> {
         document.head.appendChild(style);
       }
 
-      // Force re-render to apply changes
       window.dispatchEvent(new Event('resize'));
     })();
   ''');
