@@ -61,6 +61,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires camera access to capture photos for uploading to your account, such as taking a profile picture.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app does not use location services. This key is included due to third-party library requirements but is not utilized.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app does not use location services. This key is included due to third-party library requirements but is not utilized.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app requires access to save media files to your photo library, such as saving a downloaded document or image from your account.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
