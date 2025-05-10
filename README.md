@@ -1,16 +1,5 @@
-# app_apk_ios
+# GOEXDATA MOBILE IOS APP
 
-A new Flutter project.
+## Your one stop online store to buy and resell low cost
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+GOEXData is one of the leading Fintech and Cheapest data platform in Nigeria, owned by GOEXALT Concept Limited. Also registered with the corporate affairs commission (RC 1455764). Our services include buying and Reselling of Cheap Data, VTU Airtime, Electricity Bills Payment, Cable TV Subscriptions and Airtime to Cash.
