@@ -288,6 +288,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 initialUrlRequest: URLRequest(url: WebUri(initialUrl)),
                 initialSettings: InAppWebViewSettings(
                   javaScriptEnabled: true,
+                  geolocationEnabled: false,
                   useOnDownloadStart: true,
                   useShouldOverrideUrlLoading: true,
                   useHybridComposition: true,
