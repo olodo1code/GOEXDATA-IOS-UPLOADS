@@ -9,9 +9,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:label="GOEXDATA"
@@ -38,22 +35,20 @@
             </intent-filter>
 
             <intent-filter>
-            <action android:name="android.intent.action.VIEW"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <category android:name="android.intent.category.BROWSABLE"/>
-            <data android:scheme="goexdata" android:host="app.goexdata.com"/>
-            <data android:scheme="https" android:host="app.goexdata.com"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="goexdata" android:host="app.goexdata.com"/>
+                <data android:scheme="https" android:host="app.goexdata.com"/>
             </intent-filter>
 
         </activity>
 
-      
         <activity
             android:name=".FileChooserActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             android:exported="false"/>
 
-    
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

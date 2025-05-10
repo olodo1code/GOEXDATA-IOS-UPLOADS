@@ -5,7 +5,6 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:app_links/app_links.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 import 'package:http/http.dart' as http;
@@ -43,7 +42,6 @@ class _WebViewScreenState extends State<WebViewScreen> {
     _requestPermissions();
     _initDeepLinks();
     _setupForegroundNotifications();
-    _requestLocation();
 
     _webViewController?.addJavaScriptHandler(
       handlerName: 'uploadMedia',
@@ -68,14 +66,10 @@ class _WebViewScreenState extends State<WebViewScreen> {
       await Permission.storage.request();
       await Permission.camera.request();
       await Permission.photos.request();
-      await Permission.location.request();
     }
     if (Platform.isIOS) {
       await Permission.camera.request();
       await Permission.photos.request();
-      await Permission.location.request();
-
-      await Permission.locationWhenInUse.request();
     }
   }
 
@@ -125,70 +119,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
         document.head.appendChild(style);
       }
 
+      // Force re-render to apply changes
       window.dispatchEvent(new Event('resize'));
     })();
   ''');
   }
 
-  Future<void> _requestLocation() async {
-    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Location services are disabled.')),
-      );
-      return;
-    }
-
-    LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Location permission denied.')),
-        );
-        return;
-      }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text(
-              'Location permissions are permanently denied. Please enable in settings.'),
-          action: SnackBarAction(
-            label: 'Settings',
-            onPressed: () async {
-              await Geolocator.openAppSettings();
-            },
-          ),
-        ),
-      );
-      return;
-    }
-
-    try {
-      Position position = await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(
-          accuracy: LocationAccuracy.high,
-          timeLimit: Duration(seconds: 5),
-        ),
-      );
-
-      _webViewController?.evaluateJavascript(
-        source:
-            'window.postMessage({ type: "location", latitude: ${position.latitude}, longitude: ${position.longitude}, accuracy: ${position.accuracy} }, "*");',
-      );
-    } catch (e) {
-      print('Error getting location: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error getting location: $e')),
-      );
-    }
-  }
-
   Future<void> _initDeepLinks() async {
     _appLinks = AppLinks();
-
 
     try {
       final uri = await _appLinks.getInitialLink();
